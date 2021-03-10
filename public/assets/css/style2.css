@@ -102,7 +102,7 @@ ul {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 100px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -111,7 +111,7 @@ ul {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 300px;
+    top: 260px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -120,5 +120,15 @@ ul {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 580px;
+    top: 475px;
+}
+
+.slides {
+    height: 300px;
+}
+
+#idea,
+.signature {
+    font-weight: bold;
+    font-size: 54px;
 }
