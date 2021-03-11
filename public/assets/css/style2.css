@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "D-Din";
+    src: url("../font/D-DINCondensed.otf");
+}
+
+body {
+    font-family: "D-Din", sans-serif;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
 body.open {
     overflow-x: hidden;
 }
@@ -91,13 +102,6 @@ ul {
     transform: translateX(24.99%);
 }
 
-/*.sidebar.sticky {*/
-/*    position: fixed;*/
-/*    top: 130px;*/
-/*    left: 0;*/
-/*    transform: translateX(0);*/
-/*}*/
-
 .sidebar-menu__icon {
     position: absolute;
     width: 100%;
@@ -131,4 +135,24 @@ ul {
 .signature {
     font-weight: bold;
     font-size: 54px;
+}
+
+@media screen and (max-width: 768px) {
+    #idea,
+    .signature {
+        font-size: 32px;
+    }
+    .slides {
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #idea,
+    .signature {
+        font-size: 12px;
+    }
+    .slides {
+         height: 130px;
+    }
 }
