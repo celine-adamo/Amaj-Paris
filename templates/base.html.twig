@@ -114,67 +114,67 @@
             </nav>
         </header>
         <div id="main">
-        {% block body %}
+            {% block body %}
 
-        {% endblock %}
-        <footer>
-           <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
-               <div>
-                   <ul class="navbar-nav lh-sm text-center">
-                       <li class="nav-item">
-                           <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
-                       </li>
-                   </ul>
-               </div>
-               <div>
-                   <ul class="navbar-nav lh-sm text-center">
-                       <li class="nav-item">
-                           <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
-                       </li>
-                   </ul>
-               </div>
-               <div class="d-flex justify-content-around fs-3">
+            {% endblock %}
+            <footer>
+               <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
                    <div>
-                       <a class="nav-link text-white" href="#">
-                           <i class="fab fa-facebook"></i>
-                       </a>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
+                           </li>
+                       </ul>
                    </div>
                    <div>
-                       <a class="nav-link text-white" href="#">
-                           <i class="fab fa-instagram"></i>
-                       </a>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="d-flex justify-content-around fs-3">
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-facebook"></i>
+                           </a>
+                       </div>
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-instagram"></i>
+                           </a>
+                       </div>
                    </div>
                </div>
-           </div>
-            <div class="mt-2">
-                <ul class="d-flex justify-content-around">
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}À propos{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}CGV{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}Livraisons & Retours{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+                <div class="mt-2">
+                    <ul class="d-flex justify-content-around">
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}À propos{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}CGV{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}Livraisons & Retours{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
         </div>
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
