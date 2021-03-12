@@ -63,47 +63,68 @@
                         <div class="menu-btn__burger"></div>
                     </div>
                     <div>
-                        <p class="text-white text-uppercase m-0">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                        </a>
                     </div>
                     <div>
-                        <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                        <a href="#">
+                            <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                        </a>
                     </div>
                     <div>
-                        <p class="text-white text-uppercase m-0">{% trans %} Je personnalise {% endtrans %}</p>
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Je personnalise {% endtrans %}</p>
+                        </a>
                     </div>
                     <div>
                         <ul class="d-flex justify-content-around align-items-center">
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fas fa-language"></i></a>
+                                <select id="languages" class="form-select" aria-label=".form-select-sm example">
+                                    <option selected>FR</option>
+                                    <option value="1">EN</option>
+                                </select>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fas fa-user"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fas fa-user"></i>
+                                </a>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fa fa-envelope"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fa fa-shopping-basket"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="sidebar bg-dark">
+                <div class="sidebar d-flex flex-column justify-content-around align-items-center bg-dark">
+                    <div class="sidebar-menu__dressing">
+                        <ul class="text-white text-center list-unstyled">
+                            <li>{% trans %} Le dressing unisexe {% endtrans %}</li>
+                            <li>{% trans %} Je personnalise {% endtrans %}</li>
+                        </ul>
+                    </div>
                     <div class="sidebar-menu__icon">
-                        <ul class="text-white">
+                        <ul class="text-white text-center list-unstyled">
                             <li>{% trans %} Les icôniques {% endtrans %}</li>
                             <li>{% trans %} Les créations {% endtrans %}</li>
                         </ul>
                     </div>
                     <div class="sidebar-menu__contact">
-                        <ul class="text-white">
+                        <ul class="text-white text-center list-unstyled">
                             <li>{% trans %} Qui sommes-nous ? {% endtrans %}</li>
                             <li>{% trans %} Politiques de retours {% endtrans %}</li>
                             <li>{% trans %}Contactez-nous {% endtrans %}<span><i class="fa fa-phone-alt"></i></span></li>
                         </ul>
                     </div>
                     <div class="sidebar-menu__social">
-                        <ul class="text-white">
+                        <ul class="text-white text-end list-unstyled">
                             <li class="text-right"> {% trans %} Restez connecté {% endtrans %}
                                 <span><i class="fab fa-facebook"></i></span>
                                 <span><i class="fab fa-instagram"></i></span>

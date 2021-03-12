@@ -1,8 +1,10 @@
+/* ==================== Imports ==================== */
 @font-face {
     font-family: "D-Din";
     src: url("../font/D-DINCondensed.otf");
 }
 
+/* ==================== Tags ==================== */
 body {
     font-family: "D-Din", sans-serif;
     padding: 0;
@@ -23,6 +25,12 @@ nav.sticky {
 ul {
     margin: 0;
     padding: 0;
+}
+
+/* ==================== Classes ==================== */
+
+.dressing {
+    font-size: 26px;
 }
 
 /*
@@ -85,7 +93,7 @@ ul {
 .sidebar {
     position: absolute;
     left: -25%;
-    height: 100vh;
+    height: 88vh;
     width: 25%;
     opacity: 90%;
     transition: all .5s ease-in-out;
@@ -93,6 +101,21 @@ ul {
 .sidebar.open {
     transform: translateX(100%);
 }
+
+.sidebar-menu__dressing {
+    display: none;
+    font-size: 22px;
+}
+
+.sidebar-menu__icon {
+    font-size: 22px;
+}
+
+.slides {
+    height: 300px;
+}
+
+/* ==================== Ids ==================== */
 
 #main {
     transition: all .5s ease-in-out;
@@ -102,40 +125,13 @@ ul {
     transform: translateX(24.99%);
 }
 
-.sidebar-menu__icon {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.sidebar-menu__contact {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 260px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.sidebar-menu__social {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 475px;
-}
-
-.slides {
-    height: 300px;
-}
-
 #idea,
 .signature {
     font-weight: bold;
     font-size: 54px;
 }
+
+/* ==================== Media Querries ==================== */
 
 @media screen and (max-width: 768px) {
     #idea,
@@ -144,6 +140,22 @@ ul {
     }
     .slides {
         height: 230px;
+    }
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+    .sidebar.open {
+        transform: translateX(100%);
+    }
+    .sidebar-menu__dressing {
+        display: block;
+    }
+    .dressing {
+        display: none;
+    }
+    #main.open {
+        transform: translateX(0);
     }
 }
 

@@ -39,3 +39,11 @@ function stickyNavbar() {
         sidebar.classList.remove("sticky");
     }
 }
+
+// Language link redirect
+
+const selectLanguage = document.getElementById('languages');
+
+selectLanguage.addEventListener('change', () => {
+    location.href = "/";
+});
