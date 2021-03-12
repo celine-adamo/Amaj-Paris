@@ -6,7 +6,7 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon/favicon.png') }}" />
-        <title>Amaj Paris - {% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}</title>
+        <title>Amaj Paris - {% block title %}{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,8 +14,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
                   integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}">
-             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
     </head>
     <body>
@@ -25,29 +24,23 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active p-2 slides">
                             <div class="d-flex flex-column justify-content-center align-items-center text-center h-100">
-                                {# <img src="{{ asset('assets/images/slide.jpg') }}" class="d-block w-100" alt="...">#}
                                 <p id="idea" class="text-uppercase text-center fw-bold">
                                     {% trans %} [ Votre idée, notre création ] {% endtrans %}
                                 </p>
-                                <p class="text-center signature">Amaj paris</p>
+                                <p class="text-center signature m-0">Amaj paris</p>
                             </div>
                         </div>
                         <div class="carousel-item p-2 slides">
-                            <div class="d-flex justify-content-center align-items-center text-center">
-                                {# <img src="{{ asset('assets/images/slide2.jpg') }}" class="d-block w-100" alt="...">#}
-                                <p class="text-uppercase signature p-3">Unisexe</p> <br>
-                                <p class="text-uppercase p-3">
-                                    <i class="fas fa-circle"></i>
-                                </p>
+                            <div class="h-100 d-flex justify-content-center align-items-center text-center">
+                                <p class="text-uppercase signature p-3 m-0">{% trans %} Unisexe {% endtrans %}</p> <br>
+                                <p class="text-uppercase signature p-3 m-0"> • </p>
                                 <div class="px-3">
-                                    <p class="text-uppercase signature">Bio</p>
-                                    <p class="text-uppercase signature">œco-Tex</p>
-                                    <p class="text-uppercase signature">Vegan</p>
+                                    <p class="text-uppercase signature m-0">Bio</p>
+                                    <p class="text-uppercase signature m-0">œco-Tex</p>
+                                    <p class="text-uppercase signature m-0">Vegan</p>
                                 </div>
-                                <p class="text-uppercase p-3">
-                                    <i class="fas fa-circle"></i>
-                                </p>
-                                <p class="text-uppercase signature p-3">
+                                <p class="text-uppercase signature p-3 m-0"> • </p>
+                                <p class="text-uppercase signature p-3 m-0">
                                     {% trans %} Fait main {% endtrans %}
                                 </p>
                             </div>
@@ -63,77 +56,98 @@
                     </button>
                 </div>
             {% endif %}
-{#            <div class="container">#}
-{#                <div id="demo" class="carousel slide" data-ride="carousel">#}
-{#                    <div class="carousel-inner">#}
-{#                        <div class="carousel-item active">#}
-{#                            <img src="images/bio1.png" alt="Carrousel slide 1" class="d-block w-100">#}
-{#                        </div>#}
-{#                        <div class="carousel-item">#}
-{#                            <img src="images/bio.PNG" alt="Carrousel slide 2" class="d-block w-100">#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <!-- Contrôles -->#}
-{#                    <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">#}
-{#                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
-{#                        <span class="sr-only">Précédent</span>#}
-{#                    </a>#}
-{#                    <a class="carousel-control-next" href="#demo" role="button" data-slide="next">#}
-{#                        <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
-{#                        <span class="sr-only">Suivant</span>#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
             <nav class="bg-dark">
                 <div class="d-flex justify-content-around align-items-center">
                     <div class="menu-btn">
                         <div class="menu-btn__burger"></div>
                     </div>
-                    <div>
-                        <p class="text-white text-uppercase">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                    <div class="d-none d-sm-block">
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                        </a>
                     </div>
                     <div>
-                        <img height="110px" src="{{ asset('assets/images/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                        <a href="{{ path('home_page') }}">
+                            <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                        </a>
                     </div>
-                    <div>
-                        <p class="text-white text-uppercase">{% trans %} Je personnalise {% endtrans %}</p>
+                    <div class="d-none d-sm-block">
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Je personnalise {% endtrans %}</p>
+                        </a>
                     </div>
                     <div>
                         <ul class="d-flex justify-content-around align-items-center">
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fas fa-language"></i></a>
+                                <select id="languages" class="form-select" aria-label=".form-select-sm example">
+                                    <option selected>FR</option>
+                                    <option value="1">EN</option>
+                                </select>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fas fa-user"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fas fa-user"></i>
+                                </a>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fa fa-envelope"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#"><i class="fa fa-shopping-basket"></i></a>
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="sidebar bg-dark">
+                <div class="sidebar d-flex flex-column justify-content-around align-items-center bg-dark">
+                    <div class="sidebar-menu__dressing">
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Le dressing unisexe {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Je personnalise {% endtrans %}</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="sidebar-menu__icon">
-                        <ul class="text-white">
-                            <li>{% trans %} Les icôniques {% endtrans %}</li>
-                            <li>{% trans %} Les créations {% endtrans %}</li>
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Les icôniques {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Les créations {% endtrans %}</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="sidebar-menu__contact">
-                        <ul class="text-white">
-                            <li>{% trans %} Qui sommes-nous ? {% endtrans %}</li>
-                            <li>{% trans %} Politiques de retours {% endtrans %}</li>
-                            <li>{% trans %}Contactez-nous {% endtrans %}<span><i class="fa fa-phone-alt"></i></span></li>
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %} Qui sommes-nous ? {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %} Politiques de retours {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %}Contactez-nous {% endtrans %}<span><i class="fa fa-phone-alt"></i></span></a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="sidebar-menu__social">
-                        <ul class="text-white">
-                            <li class="text-right"> {% trans %} Restez connecté {% endtrans %}
-                                <span><i class="fab fa-facebook"></i></span>
-                                <span><i class="fab fa-instagram"></i></span>
+                    <div class="sidebar-menu__social mb-5">
+                        <ul class="text-white text-end list-unstyled">
+                            <li class="text-right">
+                                <div class="d-flex justify-content-between">
+                                    <a class="nav-link text-white" href="#">{% trans %} Restez connecté {% endtrans %}</a>
+                                    <a class="nav-link text-white" href="#">
+                                        <span><i class="fab fa-facebook"></i></span>
+                                    </a>
+                                    <a class="nav-link text-white" href="#">
+                                        <span><i class="fab fa-instagram"></i></span>
+                                    </a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -141,67 +155,67 @@
             </nav>
         </header>
         <div id="main">
-        {% block body %}
+            {% block body %}
 
-        {% endblock %}
-        <footer>
-           <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
-               <div>
-                   <ul class="navbar-nav lh-sm text-center">
-                       <li class="nav-item">
-                           <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
-                       </li>
-                   </ul>
-               </div>
-               <div>
-                   <ul class="navbar-nav lh-sm text-center">
-                       <li class="nav-item">
-                           <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
-                       </li>
-                   </ul>
-               </div>
-               <div class="d-flex justify-content-around fs-3">
+            {% endblock %}
+            <footer>
+               <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
                    <div>
-                       <a class="nav-link text-white" href="#">
-                           <i class="fab fa-facebook"></i>
-                       </a>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
+                           </li>
+                       </ul>
                    </div>
                    <div>
-                       <a class="nav-link text-white" href="#">
-                           <i class="fab fa-instagram"></i>
-                       </a>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="d-flex justify-content-around fs-3">
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-facebook"></i>
+                           </a>
+                       </div>
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-instagram"></i>
+                           </a>
+                       </div>
                    </div>
                </div>
-           </div>
-            <div class="mt-2">
-                <ul class="d-flex justify-content-around">
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}À propos{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}CGV{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">{% trans %}Livraisons & Retours{% endtrans %}</a>
-                    </li>
-                    <li class="list-unstyled">
-                        <a class="nav-link text-dark" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+                <div class="mt-2">
+                    <ul class="d-flex justify-content-around">
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}À propos{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}CGV{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}Livraisons & Retours{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
         </div>
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
