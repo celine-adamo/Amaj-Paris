@@ -1,19 +1,230 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon/favicon.png') }}" />
+        <title>Amaj Paris - {% block title %}{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            {% if block('carousel') is defined %}
+                <div id="carouselAmajControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active p-2 slides">
+                            <div class="d-flex flex-column justify-content-center align-items-center text-center h-100">
+                                <p id="idea" class="text-uppercase text-center fw-bold">
+                                    {% trans %} [ Votre idée, notre création ] {% endtrans %}
+                                </p>
+                                <p class="text-center signature m-0">Amaj paris</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item p-2 slides">
+                            <div class="h-100 d-flex justify-content-center align-items-center text-center">
+                                <p class="text-uppercase signature p-3 m-0">{% trans %} Unisexe {% endtrans %}</p> <br>
+                                <p class="text-uppercase signature p-3 m-0"> • </p>
+                                <div class="px-3">
+                                    <p class="text-uppercase signature m-0">Bio</p>
+                                    <p class="text-uppercase signature m-0">œco-Tex</p>
+                                    <p class="text-uppercase signature m-0">Vegan</p>
+                                </div>
+                                <p class="text-uppercase signature p-3 m-0"> • </p>
+                                <p class="text-uppercase signature p-3 m-0">
+                                    {% trans %} Fait main {% endtrans %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAmajControls"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAmajControls"  data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            {% endif %}
+            <nav class="bg-dark">
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="menu-btn">
+                        <div class="menu-btn__burger"></div>
+                    </div>
+                    <div class="d-none d-sm-block">
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{ path('home_page') }}">
+                            <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                        </a>
+                    </div>
+                    <div class="d-none d-sm-block">
+                        <a class="nav-link" href="#">
+                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Je personnalise {% endtrans %}</p>
+                        </a>
+                    </div>
+                    <div>
+                        <ul class="d-flex justify-content-around align-items-center">
+                            <li class="list-unstyled p-2">
+                                <select id="languages" class="form-select" aria-label=".form-select-sm example">
+                                    <option selected>FR</option>
+                                    <option value="1">EN</option>
+                                </select>
+                            </li>
+                            <li class="list-unstyled p-2">
+                                <a class="text-white" href="#">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </li>
+                            <li class="list-unstyled p-2">
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li class="list-unstyled p-2">
+                                <a class="text-white" href="#">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar d-flex flex-column justify-content-around align-items-center bg-dark">
+                    <div class="sidebar-menu__dressing">
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Le dressing unisexe {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Je personnalise {% endtrans %}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-menu__icon">
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Les icôniques {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Les créations {% endtrans %}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-menu__contact">
+                        <ul class="text-white text-center list-unstyled">
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %} Qui sommes-nous ? {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %} Politiques de retours {% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-white" href="#">{% trans %}Contactez-nous {% endtrans %}<span><i class="fa fa-phone-alt"></i></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-menu__social mb-5">
+                        <ul class="text-white text-end list-unstyled">
+                            <li class="text-right">
+                                <div class="d-flex justify-content-between">
+                                    <a class="nav-link text-white" href="#">{% trans %} Restez connecté {% endtrans %}</a>
+                                    <a class="nav-link text-white" href="#">
+                                        <span><i class="fab fa-facebook"></i></span>
+                                    </a>
+                                    <a class="nav-link text-white" href="#">
+                                        <span><i class="fab fa-instagram"></i></span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            {% block body %}
+
+            {% endblock %}
+            <footer>
+               <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
+                   <div>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <div>
+                       <ul class="navbar-nav lh-sm text-center">
+                           <li class="nav-item">
+                               <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="d-flex justify-content-around fs-3">
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-facebook"></i>
+                           </a>
+                       </div>
+                       <div>
+                           <a class="nav-link text-white" href="#">
+                               <i class="fab fa-instagram"></i>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+                <div class="mt-2">
+                    <ul class="d-flex justify-content-around">
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}À propos{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}CGV{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">{% trans %}Livraisons & Retours{% endtrans %}</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a class="nav-link text-dark" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+                    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+                    integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+            <script src="{{ asset('assets/js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
+
