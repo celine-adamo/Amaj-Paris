@@ -1,39 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %} Accueil {% endtrans %}{% endblock %}
+{% block title %}
+    {% trans %} Accueil {% endtrans %}
+{% endblock %}
 
 {% block body %}
     {% block carousel %}{% endblock %}
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <hr>
         <div class="row mb-5">
+            <div class="border border-dark h-75 d-flex justify-content-center my-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Photo ici
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <a class="btn btn-dark" href="#">Créez votre personnalisation</a>
+            </div>
+            <br>
+            <hr>
             {% for iconic in iconics %}
                 <div class="col-6 col-md-4 mb-2">
                     <div class="card border-0">
-                        <img class="card-img-top" src="{{ asset('assets/images/iconics') }}/{{ iconic.img }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('assets/images/iconics') }}/{{ iconic.img }}"
+                             alt="Illustration de {{ iconic.name }}">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ iconic.name }}</h5>
                         </div>
