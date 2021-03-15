@@ -166,7 +166,7 @@ ul {
 @media screen and (max-width: 576px) {
     #idea,
     .signature {
-        font-size: 12px;
+        font-size: 18px;
     }
     .slides {
          height: 130px;

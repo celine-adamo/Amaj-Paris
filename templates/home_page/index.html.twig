@@ -4,37 +4,42 @@
 
 {% block body %}
     {% block carousel %}{% endblock %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div class="row mb-5">
+            {% for iconic in iconics %}
+                <div class="col-6 col-md-4 mb-2">
+                    <div class="card border-0">
+                        <img class="card-img-top" src="{{ asset('assets/images/iconics') }}/{{ iconic.img }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ iconic.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
