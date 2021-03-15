@@ -79,7 +79,7 @@
                     <div>
                         <ul class="d-flex justify-content-around align-items-center">
                             <li class="list-unstyled p-2">
-                                <select id="languages" class="form-select" aria-label=".form-select-sm example">
+                                <select id="languages" class="border-0 bg-dark text-white" aria-label=".form-select-sm example">
                                     <option selected>FR</option>
                                     <option value="1">EN</option>
                                 </select>
@@ -159,43 +159,71 @@
 
             {% endblock %}
             <footer>
-               <div class="d-flex justify-content-around align-items-center p-4 bg-dark">
-                   <div>
-                       <ul class="navbar-nav lh-sm text-center">
-                           <li class="nav-item">
-                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
-                           </li>
-                       </ul>
-                   </div>
-                   <div>
-                       <ul class="navbar-nav lh-sm text-center">
-                           <li class="nav-item">
-                               <a class="nav-link text-white fs-5" href="#">{% trans %}Je personnalise{% endtrans %}</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="d-flex justify-content-around fs-3">
-                       <div>
-                           <a class="nav-link text-white" href="#">
-                               <i class="fab fa-facebook"></i>
-                           </a>
-                       </div>
-                       <div>
-                           <a class="nav-link text-white" href="#">
-                               <i class="fab fa-instagram"></i>
-                           </a>
+               <div class="bg-dark">
+                   <div class="container">
+                       <div class="row">
+                           <div class="d-flex justify-content-around align-items-center p-4">
+                               <div class="col-6 d-md-flex offset-xl-2 align-items-center">
+                                   <div class="offset-0 offset-md-4">
+                                       <ul class="navbar-nav lh-sm">
+                                           <li class="nav-item">
+                                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                                           </li>
+                                           <li class="nav-item">
+                                               <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
+                                           </li>
+                                           <li class="nav-item">
+                                               <a class="nav-link text-white" href="#">{% trans %}Collections{% endtrans %}</a>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </div>
+                               {# TODO: Faire en sorte que ce soit aligner avec la navbar #}
+                               <div class="col-6 d-flex justify-content-md-center align-items-center">
+                                   <div class="d-flex flex-row offset-2">
+                                       <div class="w-100">
+                                           <ul class="navbar-nav lh-sm">
+                                               <li class="nav-item">
+                                                   <a class="nav-link text-white fs-5 text-nowrap" href="#">{% trans %}Je personnalise{% endtrans %}</a>
+                                               </li>
+                                               <li class="nav-item">
+                                                   <a class="nav-link text-white" href="#">{% trans %}Personnalisations{% endtrans %}</a>
+                                               </li>
+                                               <li class="nav-item">
+                                                   <a class="nav-link text-white" href="#">{% trans %}Ateliers{% endtrans %}</a>
+                                               </li>
+                                           </ul>
+                                       </div>
+                                       <div class="footer-reseaux offset-md-4 fs-3">
+                                           <div>
+                                               <a class="nav-link text-white" href="#">
+                                                   <i class="fab fa-facebook"></i>
+                                               </a>
+                                           </div>
+                                           <div>
+                                               <a class="nav-link text-white" href="#">
+                                                   <i class="fab fa-instagram"></i>
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-12">
+                               <div class="footer-reseaux-mobile fs-3">
+                                   <div>
+                                       <a class="nav-link text-white" href="#">
+                                           <i class="fab fa-facebook"></i>
+                                       </a>
+                                   </div>
+                                   <div>
+                                       <a class="nav-link text-white" href="#">
+                                           <i class="fab fa-instagram"></i>
+                                       </a>
+                                   </div>
+                               </div>
+                           </div>
+                           </div>
                        </div>
                    </div>
                </div>
