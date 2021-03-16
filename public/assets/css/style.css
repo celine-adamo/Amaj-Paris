@@ -95,7 +95,7 @@ ul {
     left: -25%;
     height: 88vh;
     width: 25%;
-    opacity: 90%;
+    /*opacity: 95%;*/
     transition: all .5s ease-in-out;
 }
 .sidebar.open {
@@ -115,6 +115,20 @@ ul {
     height: 300px;
 }
 
+/*
+    Footer
+ */
+
+.footer-reseaux {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer-reseaux-mobile {
+    display: none;
+}
+
 /* ==================== Ids ==================== */
 
 #main {
@@ -129,6 +143,18 @@ ul {
 .signature {
     font-weight: bold;
     font-size: 54px;
+}
+
+#languages {
+    cursor: pointer;
+}
+
+#languages:focus {
+    outline: none;
+}
+
+#iconics-title {
+    font-weight: bold;
 }
 
 /* ==================== Media Querries ==================== */
@@ -151,11 +177,20 @@ ul {
     .sidebar-menu__dressing {
         display: block;
     }
+    .footer-reseaux-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
     .sidebar__dressing {
         font-size: 22px;
         font-weight: bold;
     }
     .dressing {
+        display: none;
+    }
+    .footer-reseaux {
         display: none;
     }
     #main.open {
@@ -166,7 +201,10 @@ ul {
 @media screen and (max-width: 576px) {
     #idea,
     .signature {
-        font-size: 12px;
+        font-size: 18px;
+    }
+    .sidebar {
+        opacity: 95%;
     }
     .slides {
          height: 130px;
