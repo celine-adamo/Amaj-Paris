@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "D-Din";
+    src: url("../font/D-DINCondensed.otf");
+}
+
+body {
+    font-family: "D-Din", sans-serif;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+body.open {
+    overflow-x: hidden;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    Menu Burger
+*/
+
+.menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/*
+    Sidebar
+ */
+
+.sidebar {
+    position: absolute;
+    left: -25%;
+    height: 100vh;
+    width: 25%;
+    opacity: 90%;
+    transition: all .5s ease-in-out;
+}
+.sidebar.open {
+    transform: translateX(100%);
+}
+
+#main {
+    transition: all .5s ease-in-out;
+}
+
+#main.open {
+    transform: translateX(24.99%);
+}
+
+.sidebar-menu__icon {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidebar-menu__contact {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidebar-menu__social {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 475px;
+}
+
+.slides {
+    height: 300px;
+}
+
+#idea,
+.signature {
+    font-weight: bold;
+    font-size: 54px;
+}
+
+@media screen and (max-width: 768px) {
+    #idea,
+    .signature {
+        font-size: 32px;
+    }
+    .slides {
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #idea,
+    .signature {
+        font-size: 12px;
+    }
+    .slides {
+         height: 130px;
+    }
+}
