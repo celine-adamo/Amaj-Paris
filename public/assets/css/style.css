@@ -29,6 +29,10 @@ ul {
 
 /* ==================== Classes ==================== */
 
+.contner {
+    margin: 130px 0;
+}
+
 .dressing {
     font-size: 26px;
 }
