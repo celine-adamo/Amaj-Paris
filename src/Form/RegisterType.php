@@ -21,7 +21,8 @@ class RegisterType extends AbstractType
             ->add('firstname', TextType::class, [
                 "label" => "Prénom",
                 "attr" => [
-                    "placeholder" => "Votre prénom"
+                    "placeholder" => "Votre prénom",
+                    "class" => "form-control-sm"
                 ]
             ])
             ->add('lastname', TextType::class, [

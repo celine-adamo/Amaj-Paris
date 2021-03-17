@@ -1,0 +1,56 @@
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    padding: 15px 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    text-indent: 17px;
+    outline: none;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    border: 1px solid #ccc;
+    padding: 6px 4px;
+    outline: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    color: #ffffff;
+    background-color: #212529;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px !important;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: normal;
+    padding: 15px 0;
+    text-transform: uppercase;
+} 
+
+#customer-wrapper {
+    margin-bottom: 40px;
+}
+ 
+.form-cont{
+    margin-top:3% !important;
+    margin-bottom:3% !important;
+} 
