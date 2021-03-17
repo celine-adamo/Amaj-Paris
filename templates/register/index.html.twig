@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	S'inscrire
+{% endblock %}
+
+{% block body %}
+	<div class="container form-cont mt-5">
+		<div class="row">
+			<div class="col-12 form-cont">
+				<h2 class="form-cont">S'inscrire</h2>
+				{{form_start(form)}}
+					<div id="first_name">
+						{{form_row(form.firstname)}}
+					</div>
+					<div id="last_name">
+						{{form_row(form.lastname)}}
+					</div>
+					<div id="email">
+						{{form_row(form.email)}}
+					</div>
+
+					<div id="password">
+						{{form_row(form.password)}}
+					</div>
+					<div>
+						{{form_row(form.submit)}}
+					</div>
+				{{form_end(form)}}
+			</div>
+		</div>
+	</div>
+{% endblock %}

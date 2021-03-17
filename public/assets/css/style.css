@@ -19,7 +19,7 @@ nav.sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 20;
 }
 
 ul {
@@ -28,6 +28,10 @@ ul {
 }
 
 /* ==================== Classes ==================== */
+
+.contner {
+    margin: 130px 0;
+}
 
 .dressing {
     font-size: 26px;
