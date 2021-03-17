@@ -7,27 +7,30 @@
 	<div class="container form-cont">
 		<div class="row">
 			<div class="col-12">
-				     <h2>S'inscrire</h2>
-				
-					{{form_start(form)}}
-					<div id="first_name">
-						{{form_row(form.firstname)}}
-					</div>
-					<div id="last_name">
-						{{form_row(form.lastname)}}
-					</div>
-					<div id="email"
-						{{form_row(form.email)}}
-					</div>
+				<h2>S'inscrire</h2>
 
-					<div id="password">
-						{{form_row(form.password)}}
-					</div>
-					<div>
-						{{form_row(form.submit)}}
-					</div>
+				{{form_start(form)}}
+				<div id="first_name">
+					{{form_row(form.firstname)}}
+				</div>
 
-					{{form_end(form)}}
+				<div id="last_name">
+					{{form_row(form.lastname)}}
+				</div>
+
+				<div id="email">
+					{{form_row(form.email)}}
+				</div>
+
+				<div id="password">
+					{{form_row(form.password)}}
+				</div>
+
+				<div>
+					{{form_row(form.submit)}}
+				</div>
+
+				{{form_end(form)}}
 			</div>
 		</div>
 	</div>
