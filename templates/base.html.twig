@@ -86,9 +86,20 @@
                                 </select>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#">
-                                    <i class="fas fa-user"></i>
-                                </a>
+{#                                <a class="text-white" href="#">#}
+{#                                    <i class="fas fa-user"></i>#}
+{#                                </a>#}
+                                <i class="text-white fas fa-user"></i>
+                                <select id="account" class="bg-dark border-0 text-white" aria-label=".form-select-sm example">
+                                    <option value="0" selected></option>
+                                    {% if app.user %}
+                                        <option id="my_account" value="1">Mon compte</option>
+                                        <option id="logout" value="2">Se déconnecter</option>
+                                    {% else %}
+                                        <option id="register" value="3">S'inscrire</option>
+                                        <option id="login" value="4">Se connecter</option>
+                                    {% endif %}
+                                </select>
                             </li>
                             <li class="list-unstyled p-2">
                                 <a class="text-white" href="#">
