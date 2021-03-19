@@ -29,32 +29,3 @@ const selectLanguage = document.getElementById('languages');
 selectLanguage.addEventListener('change', () => {
     location.href = "/";
 });
-
-// User link redirect
-
-const account = document.querySelector('#account');
-
-account.addEventListener('change', (e) => {
-    // console.log('e.target', e.target)
-    const select = e.target;
-    const value = select.value;
-    const numberValue = parseInt(value)
-    redirectLinks(numberValue);
-});
-
-function redirectLinks(sel) {
-    switch (sel) {
-        case 1:
-            location.href = "/account";
-            break;
-        case 2:
-            location.href = "/logout";
-            break;
-        case 3:
-            location.href = "/register";
-            break;
-        case 4:
-            location.href = "/login"
-            break;
-    }
-}

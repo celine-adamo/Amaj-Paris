@@ -30,7 +30,7 @@ ul {
 /* ==================== Classes ==================== */
 
 .contner {
-    margin: 130px 0;
+    margin-top: 165px;
 }
 
 .dressing {
@@ -88,6 +88,31 @@ ul {
 }
 .menu-btn.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.details[open] {
+    transition: all .5s ease-in-out;
+}
+
+.details summary:focus {
+    outline: none;
+}
+
+.details-menu {
+    width: 500% !important;
+    right: -195%;
+    padding: 5px;
+    background-color: floralwhite;
+    box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+}
+
+.details-menu li a:hover {
+    background-color: #212529;
+    color: #f1f1f1 !important;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
 }
 
 /*
