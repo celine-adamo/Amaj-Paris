@@ -80,29 +80,22 @@
                     <div>
                         <ul class="d-flex justify-content-around align-items-center">
                             <li class="list-unstyled p-2">
-                                <select id="languages" class="border-0 bg-dark text-white" aria-label=".form-select-sm example">
-                                    <option selected>FR</option>
-                                    <option value="1">EN</option>
-                                </select>
-                            </li>
-                            <li class="list-unstyled p-2">
-                                {#
-                                    TODO: Rapprocher la flèche de l'icône
-                                #}
-{#                                <i class="text-white fas fa-user"></i>#}
-{#                                <select id="account" class="bg-dark border-0 text-white" aria-label=".form-select-sm example">#}
-{#                                    <option value="0" selected></option>#}
-{#                                    {% if app.user %}#}
-{#                                        <option id="my_account" value="1">Mon compte</option>#}
-{#                                        <option id="logout" value="2">Se déconnecter</option>#}
-{#                                    {% else %}#}
-{#                                        <option id="register" value="3">S'inscrire</option>#}
-{#                                        <option id="login" value="4">Se connecter</option>#}
-{#                                    {% endif %}#}
+{#                                <select id="languages" class="border-0 bg-dark text-white" aria-label=".form-select-sm example">#}
+{#                                    <option selected>FR</option>#}
+{#                                    <option value="1">EN</option>#}
 {#                                </select>#}
                                 <details class="details position-relative text-white">
+                                    <summary>Lang</summary>
+                                    <ul class="details-menu-lang position-absolute border border-0 rounded list-unstyled">
+                                        <li><a class="nav-link text-dark text-center" href="#">FR</a></li>
+                                        <li><a class="nav-link text-dark text-center" href="#">EN</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li class="list-unstyled p-2">
+                                <details class="details position-relative text-white">
                                     <summary><i class="text-white fas fa-user"></i></summary>
-                                    <ul class="details-menu position-absolute border border-0 rounded list-unstyled">
+                                    <ul class="details-menu-account position-absolute border border-0 rounded list-unstyled">
                                         {% if app.user %}
                                             <li id="my_account" value="1">
                                                 <a class="nav-link text-dark" href="{{ path('account') }}">Mon compte <small>({{ app.user.firstname }})</small></a>

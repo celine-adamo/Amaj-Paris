@@ -98,17 +98,28 @@ ul {
     outline: none;
 }
 
-.details-menu {
+.details-menu-account {
     width: 500% !important;
     right: -195%;
     padding: 5px;
-    background-color: floralwhite;
+    background-color: #fffaf0;
     box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
 }
 
-.details-menu li a:hover {
+.details-menu-lang {
+    width: 200% !important;
+    right: -70%;
+    padding: 5px;
+    background-color: #fffaf0;
+    box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+}
+
+.details-menu-account li a:hover,
+.details-menu-lang li a:hover {
     background-color: #212529;
     color: #f1f1f1 !important;
     border-radius: 5px;
@@ -226,6 +237,10 @@ ul {
     }
     .footer-reseaux {
         display: none;
+    }
+    .details-menu-account li a:hover {
+        background-color: #fffaf0;
+        color: #000000 !important;
     }
     #main.open {
         transform: translateX(0);
