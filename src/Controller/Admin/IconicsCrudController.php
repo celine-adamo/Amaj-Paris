@@ -20,7 +20,6 @@ class IconicsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            TextField::new('img'),
             ImageField::new('pics')
                 ->setBasePath('assets/images/iconics/')
                 ->setUploadDir('public/assets/images/iconics/')
