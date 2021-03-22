@@ -86,9 +86,40 @@
                                 </select>
                             </li>
                             <li class="list-unstyled p-2">
-                                <a class="text-white" href="#">
-                                    <i class="fas fa-user"></i>
-                                </a>
+                                {#
+                                    TODO: Rapprocher la flèche de l'icône
+                                #}
+{#                                <i class="text-white fas fa-user"></i>#}
+{#                                <select id="account" class="bg-dark border-0 text-white" aria-label=".form-select-sm example">#}
+{#                                    <option value="0" selected></option>#}
+{#                                    {% if app.user %}#}
+{#                                        <option id="my_account" value="1">Mon compte</option>#}
+{#                                        <option id="logout" value="2">Se déconnecter</option>#}
+{#                                    {% else %}#}
+{#                                        <option id="register" value="3">S'inscrire</option>#}
+{#                                        <option id="login" value="4">Se connecter</option>#}
+{#                                    {% endif %}#}
+{#                                </select>#}
+                                <details class="details position-relative text-white">
+                                    <summary><i class="text-white fas fa-user"></i></summary>
+                                    <ul class="details-menu position-absolute border border-0 rounded list-unstyled">
+                                        {% if app.user %}
+                                            <li id="my_account" value="1">
+                                                <a class="nav-link text-dark" href="{{ path('account') }}">Mon compte <small>({{ app.user.firstname }})</small></a>
+                                            </li>
+                                            <li id="logout" value="2">
+                                                <a class="nav-link text-dark" href="{{ path('app_logout') }}">Se déconnecter</a>
+                                            </li>
+                                        {% else %}
+                                            <li id="register" value="3">
+                                                <a class="nav-link text-dark" href="{{ path('register') }}">S'inscrire</a>
+                                            </li>
+                                            <li id="login" value="4">
+                                                <a class="nav-link text-dark" href="{{ path('app_login') }}">Se connecter</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </details>
                             </li>
                             <li class="list-unstyled p-2">
                                 <a class="text-white" href="#">
