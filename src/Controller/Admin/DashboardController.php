@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Iconics;
+use App\Entity\Products;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -32,5 +33,6 @@ class DashboardController extends AbstractDashboardController
         // Menu ajouté avec la commande => symfony console make:admin:crud
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::linkToCrud('Icôniques', 'fas fa-pencil-ruler', Iconics::class);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-tshirt', Products::class);
     }
 }
