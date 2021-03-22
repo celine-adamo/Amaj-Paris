@@ -29,6 +29,18 @@ class DressingController extends AbstractController
             'products' => $products,
         ]);
     }
+    
+    /**
+     * @Route("/dressing/{slug}", name="one-dressing")
+     */
+    public function one($slug): Response
+    {
+        $product=$this->entity->getRepository(Products::class)->findOneBySlug($slug);
+
+        return $this->render('dressing/one.html.twig', [
+            'product' => $product,
+        ]);
+    }
 }
 
 
