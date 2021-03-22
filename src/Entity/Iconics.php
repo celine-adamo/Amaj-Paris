@@ -22,10 +22,10 @@ class Iconics
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $img;
+//    /**
+//     * @ORM\Column(type="string", length=255)
+//     */
+//    private $img;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -54,17 +54,17 @@ class Iconics
         return $this;
     }
 
-    public function getImg(): ?string
-    {
-        return $this->img;
-    }
-
-    public function setImg(string $img): self
-    {
-        $this->img = $img;
-
-        return $this;
-    }
+//    public function getImg(): ?string
+//    {
+//        return $this->img;
+//    }
+//
+//    public function setImg(string $img): self
+//    {
+//        $this->img = $img;
+//
+//        return $this;
+//    }
 
     public function getPics(): ?string
     {
