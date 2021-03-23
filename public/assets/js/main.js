@@ -21,11 +21,3 @@ menuBtn.addEventListener('click', () => {
         menuOpen = false;
     }
 });
-
-// Language link redirect
-
-const selectLanguage = document.getElementById('languages');
-
-selectLanguage.addEventListener('change', () => {
-    location.href = "/";
-});
