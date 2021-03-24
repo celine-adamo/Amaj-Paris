@@ -6,7 +6,11 @@
     <div class="container contner">
         <div class="row">
             <h1>Bienvenue {{ app.user.firstname }} {{ app.user.lastname }}</h1>
-
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
             <p>Ses commandes</p>
             <p>Gestion de son compte</p>
         </div>

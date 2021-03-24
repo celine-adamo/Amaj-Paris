@@ -8,6 +8,11 @@
     {% block carousel %}{% endblock %}
     <div class="container">
         <div class="row mb-5">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success mt-5">
+                    {{ message }}
+                </div>
+            {% endfor %}
             <div class="border border-dark h-75 d-flex justify-content-center my-5">
                 <br>
                 <br>
