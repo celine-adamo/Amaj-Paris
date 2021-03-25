@@ -11,9 +11,13 @@
         <h2 class="ms-4">
           {{ product.name }}
         </h2>
-        <img class="card-img-top"
+        <img class="card-img-top clothe-shadow"
           src="{{ asset('assets/images/products') }}/{{ product.img }}"
           alt="Modèle {{ product.name }}" />
+
+                  <img class="card-img-top clothe-shadow d-none"
+          src="{{ asset('assets/images/products') }}/{{ product.clothBack }}"
+          alt="Modèle {{ product.name }}" /> 
       </div>
     </div>
   </div>

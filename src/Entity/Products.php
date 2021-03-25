@@ -40,7 +40,7 @@ class Products
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $img_back;
+    private $clothBack;
 
     public function getId(): ?int
     {
@@ -95,14 +95,14 @@ class Products
         return $this;
     }
 
-    public function getImgBack(): ?string
+    public function getClothBack(): ?string
     {
-        return $this->img_back;
+        return $this->clothBack;
     }
 
-    public function setImgBack(string $img_back): self
+    public function setClothBack(string $clothBack): self
     {
-        $this->img_back = $img_back;
+        $this->clothBack = $clothBack;
 
         return $this;
     }

@@ -23,24 +23,24 @@ class DressingController extends AbstractController
      */
     public function index(): Response
     {
-        $products=$this->entity->getRepository(Products::class)->findAll();
+        $products = $this->entity->getRepository(Products::class)->findAll();
+
+
 
         return $this->render('dressing/index.html.twig', [
             'products' => $products,
         ]);
     }
-    
+
     /**
      * @Route("/dressing/{slug}", name="one-dressing")
      */
     public function one($slug): Response
     {
-        $product=$this->entity->getRepository(Products::class)->findOneBySlug($slug);
-
+        $product = $this->entity->getRepository(Products::class)->findOneBySlug($slug);
+       /*  dd($product); */
         return $this->render('dressing/one.html.twig', [
             'product' => $product,
         ]);
     }
 }
-
-
