@@ -127,6 +127,10 @@ ul {
     transition: all 0.5s ease-in-out;
 }
 
+.iconics-title {
+    font-weight: bold;
+}
+
 /*
     Sidebar
  */
@@ -199,10 +203,6 @@ ul {
     outline: none;
 }
 
-#iconics-title {
-    font-weight: bold;
-}
-
 /* ==================== Media Querries ==================== */
 
 @media screen and (max-width: 768px) {
@@ -254,7 +254,7 @@ ul {
 @media screen and (max-width: 576px) {
     #idea,
     .signature {
-        font-size: 18px;
+        font-size: 16px;
     }
     .sidebar {
         opacity: 95%;

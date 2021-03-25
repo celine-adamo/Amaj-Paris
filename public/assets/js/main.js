@@ -21,3 +21,24 @@ menuBtn.addEventListener('click', () => {
         menuOpen = false;
     }
 });
+
+// Sidebar
+
+// const sidebar = document.querySelector('.sidebar').forEach((e) => {
+//     const links = Array.from(e.querySelectorAll('.sidebar-menu'));
+// });
+const sidebar_menu = Array.from(document.querySelectorAll('.sidebar .sidebar-menu ul li a'));
+console.log(sidebar_menu);
+
+sidebar_menu.forEach((e) => {
+    e.addEventListener('click', () => {
+        if (sidebar.classList.contains('open')) {
+            menuBtn.classList.remove('open');
+            sidebar.classList.remove('open');
+            main.classList.remove('open');
+            body.classList.remove('open');
+            menuOpen = false;
+        }
+    });
+})
+
