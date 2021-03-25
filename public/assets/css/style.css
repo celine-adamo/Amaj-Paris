@@ -1,10 +1,12 @@
 /* ==================== Imports ==================== */
+
 @font-face {
     font-family: "D-Din";
     src: url("../font/D-DINCondensed.otf");
 }
 
 /* ==================== Tags ==================== */
+
 body {
     font-family: "D-Din", sans-serif;
     padding: 0;
@@ -37,6 +39,15 @@ ul {
     font-size: 26px;
 }
 
+.clothe-shadow {
+    -webkit-filter: drop-shadow(5px 5px 5px #8C8C8C);
+    filter: drop-shadow(5px 5px 5px #8C8C8C);
+    -moz-filter :  drop-shadow(5px 5px 5px #8C8C8C);
+    -ms-filter : drop-shadow(5px 5px 5px #8C8C8C);
+}
+
+
+
 /*
     Menu Burger
 */
@@ -60,8 +71,7 @@ ul {
     transition: all .5s ease-in-out;
 }
 
-.menu-btn__burger::before,
-.menu-btn__burger::after {
+.menu-btn__burger::before, .menu-btn__burger::after {
     content: "";
     position: absolute;
     width: 47px;
@@ -74,6 +84,7 @@ ul {
 .menu-btn__burger::before {
     transform: translateY(-16px);
 }
+
 .menu-btn__burger::after {
     transform: translateY(16px);
 }
@@ -86,6 +97,7 @@ ul {
 .menu-btn.open .menu-btn__burger::before {
     transform: rotate(45deg) translate(35px, -35px);
 }
+
 .menu-btn.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
 }
@@ -103,9 +115,9 @@ ul {
     right: -195%;
     padding: 5px;
     background-color: #fffaf0;
-    box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
-    -webkit-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
 }
 
 .details-menu-lang {
@@ -113,13 +125,12 @@ ul {
     right: -70%;
     padding: 5px;
     background-color: #fffaf0;
-    box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
-    -webkit-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 8px 0 rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
 }
 
-.details-menu-account li a:hover,
-.details-menu-lang li a:hover {
+.details-menu-account li a:hover, .details-menu-lang li a:hover {
     background-color: #212529;
     color: #f1f1f1 !important;
     border-radius: 5px;
@@ -138,6 +149,7 @@ ul {
     /*opacity: 95%;*/
     transition: all .5s ease-in-out;
 }
+
 .sidebar.open {
     transform: translateX(100%);
 }
@@ -184,8 +196,7 @@ ul {
     width: auto;
 }
 
-#idea,
-.signature {
+#idea, .signature {
     font-weight: bold;
     font-size: 54px;
 }
@@ -205,8 +216,7 @@ ul {
 /* ==================== Media Querries ==================== */
 
 @media screen and (max-width: 768px) {
-    #idea,
-    .signature {
+    #idea, .signature {
         font-size: 32px;
     }
     .slides {
@@ -251,14 +261,13 @@ ul {
 }
 
 @media screen and (max-width: 576px) {
-    #idea,
-    .signature {
+    #idea, .signature {
         font-size: 18px;
     }
     .sidebar {
         opacity: 95%;
     }
     .slides {
-         height: 130px;
+        height: 130px;
     }
 }

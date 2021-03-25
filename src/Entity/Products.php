@@ -37,6 +37,11 @@ class Products
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $img_back;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Products
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getImgBack(): ?string
+    {
+        return $this->img_back;
+    }
+
+    public function setImgBack(string $img_back): self
+    {
+        $this->img_back = $img_back;
 
         return $this;
     }

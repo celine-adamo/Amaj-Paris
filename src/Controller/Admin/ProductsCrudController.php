@@ -26,6 +26,11 @@ class ProductsCrudController extends AbstractCrudController
                 ->setUploadDir('public/assets/images/products/')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
+            ImageField::new('img_back')
+                ->setBasePath('assets/images/products/')
+                ->setUploadDir('public/assets/images/products/')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
             ArrayField::new('size'),
             SlugField::new('slug')
                 ->setTargetFieldName('name'),
