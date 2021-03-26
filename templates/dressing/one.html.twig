@@ -15,10 +15,24 @@
           src="{{ asset('assets/images/products') }}/{{ product.img }}"
           alt="Modèle {{ product.name }}" />
 
-                  <img class="card-img-top clothe-shadow d-none"
+          <img class="card-img-top clothe-shadow d-none"
           src="{{ asset('assets/images/products') }}/{{ product.clothBack }}"
           alt="Modèle {{ product.name }}" /> 
       </div>
+       <h2 id="iconics-title" class="text-center mt-3">
+                {% trans %} Les icôniques {% endtrans %}
+            </h2>
+            {% for iconic in iconics %}
+                <div class="col-6 col-md-2 mb-2 ">
+                    <div class="card border-0">
+                        <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
+                             alt="Illustration de {{ iconic.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center ">{{ iconic.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
     </div>
   </div>
 {% endblock %}

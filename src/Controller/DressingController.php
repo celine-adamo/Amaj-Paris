@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Iconics;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,8 +26,6 @@ class DressingController extends AbstractController
     {
         $products = $this->entity->getRepository(Products::class)->findAll();
 
-
-
         return $this->render('dressing/index.html.twig', [
             'products' => $products,
         ]);
@@ -38,9 +37,11 @@ class DressingController extends AbstractController
     public function one($slug): Response
     {
         $product = $this->entity->getRepository(Products::class)->findOneBySlug($slug);
-       /*  dd($product); */
+        $iconics = $this->entity->getRepository(Iconics::class)->findAll();
+
         return $this->render('dressing/one.html.twig', [
             'product' => $product,
+            'iconics' => $iconics,
         ]);
     }
 }
