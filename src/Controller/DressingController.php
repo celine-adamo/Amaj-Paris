@@ -46,4 +46,14 @@ class DressingController extends AbstractController
             'iconics' => $iconics,
         ]);
     }
+
+//    /**
+//     * @Route("/img-clothes/{id}", name="img-on-clothes")
+//     * @param $id
+//     * @return Response
+//     */
+//    public function iconicOnClothes($id): Response {
+//        $iconic = $this->entity->getRepository(Iconics::class)->find($id);
+//        return $this->redirectToRoute('referer');
+//    }
 }
