@@ -33,6 +33,8 @@ class DressingController extends AbstractController
 
     /**
      * @Route("/dressing/{slug}", name="one-dressing")
+     * @param $slug
+     * @return Response
      */
     public function one($slug): Response
     {

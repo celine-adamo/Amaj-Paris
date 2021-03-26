@@ -141,9 +141,19 @@ ul {
     font-weight: bold;
 }
 
-/*
-    Sidebar
- */
+.img-clothes,
+.img-iconic {
+    transition: all .2s ease-in-out;
+}
+
+.img-clothes:hover,
+.img-iconic:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+    /*
+        Sidebar
+     */
 
 .sidebar {
     position: absolute;
@@ -236,6 +246,10 @@ ul {
     }
     .sidebar-menu__dressing {
         display: block;
+    }
+    .img-clothes:hover,
+    .img-iconic:hover {
+        transform: scale(1);
     }
     .footer-reseaux-mobile {
         display: flex;
