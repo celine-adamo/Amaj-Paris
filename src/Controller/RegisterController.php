@@ -33,17 +33,24 @@ class RegisterController extends AbstractController
         $form = $this->createForm(RegisterType::class, $user);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
-            
+
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
+            $this->addFlash('success','Votre inscription a bien été enregistrée');
+
             return $this->redirectToRoute('app_login');
         }
+
+//        if($form->isSubmitted() && !$form->isValid()) {
+//            $this->addFlash('error', 'Un problème est survenu lors de l\'enregistrement de votre compte');
+//        }
+
 
         return $this->render('register/index.html.twig', [
             'form' => $form->createView(),

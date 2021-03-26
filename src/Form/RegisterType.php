@@ -22,19 +22,21 @@ class RegisterType extends AbstractType
                 "label" => "Prénom",
                 "attr" => [
                     "placeholder" => "Votre prénom",
-                    "class" => "form-control-sm"
+                    "class" => "form-control"
                 ]
             ])
             ->add('lastname', TextType::class, [
                 "label" => "Nom",
                 "attr" => [
-                    "placeholder" => "Votre nom"
+                    "placeholder" => "Votre nom",
+                    "class" => "form-control"
                 ]
             ])
             ->add('email', EmailType::class, [
                 "label" => "Email",
                 "attr" => [
-                    "placeholder" => "Votre Email"
+                    "placeholder" => "Votre Email",
+                    "class" => "form-control"
                 ]
             ])
             ->add('password', RepeatedType::class, [
@@ -45,19 +47,24 @@ class RegisterType extends AbstractType
                 "first_options" => [
                     "label" => "Mot de passe",
                     "attr" => [
-                        "placeholder" => "Votre mot de passe"
+                        "placeholder" => "Votre mot de passe",
+                        "class" => "form-control"
                     ]
                 ],
                 "second_options" => [
                     "label" => "Confirmation du mot de passe",
                     "attr" => [
-                        "placeholder" => "Confirmer votre mot de passe"
+                        "placeholder" => "Confirmer votre mot de passe",
+                        "class" => "form-control mb-5"
                     ]
                 ]
 
             ])
             -> add("submit", SubmitType::class,[
-                "label"=>"S'inscrire"
+                "label"=>"S'inscrire",
+                "attr" => [
+                    "class" => "btn btn-dark mb-5"
+                ]
             ]) ;
     }
 

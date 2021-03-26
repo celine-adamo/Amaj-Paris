@@ -8,6 +8,11 @@
     {% block carousel %}{% endblock %}
     <div class="container">
         <div class="row mb-5">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success mt-5">
+                    {{ message }}
+                </div>
+            {% endfor %}
             <div class="border border-dark h-75 d-flex justify-content-center my-5">
                 <br>
                 <br>
@@ -29,8 +34,8 @@
                 </a>
             </div>
             <br>
-            <hr>
-            <h2 id="iconics-title" class="text-center mt-3">
+            <hr id="iconics">
+            <h2 class="iconics-title text-center mt-5">
                 {% trans %} Les icôniques {% endtrans %}
             </h2>
             {% for iconic in iconics %}
