@@ -7,27 +7,24 @@
 {% block body %}
   <div class="container contner">
     <div class="row">
-        {{ dump() }}
-      <div class="text-center col-6 offset-3">
+      <div class="text-center col-md-6 offset-md-3">
         <h2>
           {{ product.name }}
         </h2>
         <div class="position-relative">
-            <img class="card-img-top clothe-shadow"
+            <img class="card-img-top clothe-shadow mh-50"
                  src="{{ asset('assets/images/products') }}/{{ product.img }}"
                  alt="Modèle {{ product.name }}"
             />
-            {% for iconic in iconics %}
-                <div class="position-absolute h-25 w-25 top-50 start-50 translate-middle col-6 col-md-2 my-4">
+            {% if iconic is defined %}
+                <div class="position-absolute col-6 col-md-2 my-4 iconicOnCloth">
                     <div class="card border-0">
-                        <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
-                             alt="Illustration de {{ iconic.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center ">{{ iconic.name }}</h5>
-                        </div>
+                        <img class="card-img-top" src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
+                             alt="Illustration de {{ iconic.name }}"
+                        >
                     </div>
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
 
           <img class="card-img-top clothe-shadow d-none"
@@ -40,7 +37,7 @@
         {% for iconic in iconics %}
 
                 <div class="col-6 col-md-2 my-4 img-iconic">
-                    <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "id": iconic.id }) }}">
+                    <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "slug": product.slug, "id": iconic.id }) }}">
                     <div class="card border-0">
                         <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
                              alt="Illustration de {{ iconic.name }}">

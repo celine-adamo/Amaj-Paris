@@ -40,6 +40,13 @@ ul {
     font-size: 26px;
 }
 
+.iconicOnCloth {
+    top: 30%;
+    left: 60%;
+    width: 70px;
+    height: 70px;
+}
+
 .clothe-shadow {
     -webkit-filter: drop-shadow(5px 5px 5px #8C8C8C);
     filter: drop-shadow(5px 5px 5px #8C8C8C);

@@ -47,13 +47,20 @@ class DressingController extends AbstractController
         ]);
     }
 
-//    /**
-//     * @Route("/img-clothes/{id}", name="img-on-clothes")
-//     * @param $id
-//     * @return Response
-//     */
-//    public function iconicOnClothes($id): Response {
-//        $iconic = $this->entity->getRepository(Iconics::class)->find($id);
-//        return $this->redirectToRoute('referer');
-//    }
+    /**
+     * @Route("/dressing/{slug}/{id}", name="img-on-clothes")
+     * @param $slug
+     * @param $id
+     * @return Response
+     */
+    public function iconicOnClothes($slug, $id): Response {
+        $product = $this->entity->getRepository(Products::class)->findOneBySlug($slug);
+        $iconics = $this->entity->getRepository(Iconics::class)->findAll();
+        $iconic = $this->entity->getRepository(Iconics::class)->find($id);
+        return $this->render('dressing/one.html.twig', [
+            'product' => $product,
+            'iconics' => $iconics,
+            'iconic' => $iconic
+        ]);
+    }
 }
