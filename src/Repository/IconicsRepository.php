@@ -19,6 +19,19 @@ class IconicsRepository extends ServiceEntityRepository
         parent::__construct($registry, Iconics::class);
     }
 
+    /**
+     * @return Iconics[] Returns an array of Iconics objects
+     */
+    public function findAllIconics(): array
+    {
+        return $this->createQueryBuilder('i')
+            ->orderBy('i.id', 'DESC')
+            ->setMaxResults(9)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Iconics[] Returns an array of Iconics objects
     //  */

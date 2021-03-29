@@ -197,12 +197,12 @@
                <div class="bg-dark">
                    <div class="container">
                        <div class="row">
-                           <div class="d-flex justify-content-around align-items-center p-4">
-                               <div class="col-6 d-md-flex offset-xl-1 align-items-center text-center">
-                                   <div class="offset-0 offset-md-2">
+                           <div class="d-flex p-4">
+                               <div class="col-6 d-md-flex align-items-center text-center">
+                                   <div class="offset-md-5">
                                        <ul class="navbar-nav lh-sm">
                                            <li class="nav-item">
-                                               <a class="nav-link text-white fs-5" href="{{ path('dressing') }}">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                                               <a class="nav-link text-white text-nowrap fs-5" href="{{ path('dressing') }}">{% trans %}Le dressing unisexe{% endtrans %}</a>
                                            </li>
                                            <li class="nav-item">
                                                <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
@@ -213,10 +213,9 @@
                                        </ul>
                                    </div>
                                </div>
-                               {# TODO: Faire en sorte que ce soit aligner avec la navbar #}
-                               <div class="col-6 d-flex justify-content-md-center align-items-center text-center">
+                               <div class="col-6 d-flex justify-content-around align-items-center text-center">
                                    <div class="d-flex flex-row w-100">
-                                       <div class="w-100">
+                                       <div class="w-md-50 w-100">
                                            <ul class="navbar-nav lh-sm">
                                                <li class="nav-item">
                                                    <a class="nav-link offset-3 text-white fs-5 text-nowrap" href="#">{% trans %}Je personnalise{% endtrans %}</a>
@@ -287,11 +286,17 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
                     integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
             <!-- Bootstrap -->
+            <!-- Three.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+            <script src="{{ asset('assets/js/hover.js') }}"></script>
+            <!-- Three.js -->
             <!-- Custom -->
             {% if block('navbar') is defined %}
                 <script src="{{ asset('assets/js/navbar.js') }}"></script>
             {% endif %}
             <script src="{{ asset('assets/js/main.js') }}"></script>
+            <script src="{{ asset('assets/js/hoverProducts.js')}}"></script>
             <!-- Custom -->
         {% endblock %}
     </body>

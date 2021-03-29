@@ -7,36 +7,35 @@
 {% block body %}
   <div class="container contner">
     <div class="row">
-      <div class="text-center col-md-6 offset-md-3">
-        <h2>
-          {{ product.name }}
+        <h2 class="text-center mb-5">
+            {{ product.name }}
         </h2>
-        <div class="position-relative">
-            <img class="card-img-top clothe-shadow mh-50"
+        {# TODO: A voir avec Céline #}
+      <div class="text-center col-md-6 offset-md-3">
+        <div class="position-relative clothe-shadow imgBox w-100">
+            <img class="position-absolute w-100 h-100 top-0 start-0 mh-50 d-none"
                  src="{{ asset('assets/images/products') }}/{{ product.img }}"
                  alt="Modèle {{ product.name }}"
             />
-            {% if iconic is defined %}
-                <div class="position-absolute col-6 col-md-2 my-4 iconicOnCloth">
-                    <div class="card border-0">
-                        <img class="card-img-top" src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
-                             alt="Illustration de {{ iconic.name }}"
-                        >
-                    </div>
-                </div>
-            {% endif %}
+            <img class="position-absolute clothe-shadow w-100 h-100 top-0 start-0 cloth-back d-none"
+                 src="{{ asset('assets/images/products') }}/{{ product.clothBack }}"
+                 alt="Modèle {{ product.name }}"
+            />
         </div>
-
-          <img class="card-img-top clothe-shadow d-none"
-          src="{{ asset('assets/images/products') }}/{{ product.clothBack }}"
-          alt="Modèle {{ product.name }}" /> 
       </div>
        <h2 id="iconics-title" class="text-center mt-3">
             {% trans %} Les icôniques {% endtrans %}
        </h2>
+        <div class="col-12">
+            <div class="col-md-4 offset-md-4 align-items-center text-center p-2">
+                <h3 id="iconics-title" class="text-nowrap mt-3 text-white bg-dark">
+                    {% trans %}Je choisis mon icônique{% endtrans %}
+                </h3>
+            </div>
+        </div>
         {% for iconic in iconics %}
             <div class="col-6 col-md-2 my-4 img-iconic">
-                <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "slug": product.slug, "id": iconic.id }) }}">
+                <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "slug": product.slug, "slugIconic": iconic.slug }) }}">
                 <div class="card border-0">
                     <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
                          alt="Illustration de {{ iconic.name }}">
@@ -47,6 +46,14 @@
                 </a>
             </div>
         {% endfor %}
+        <div class="mb-5">
+            <button class="btn btn-dark {% if iconic is not defined %} disabled {% endif %}">
+                <a class="text-white nav-link" href="#">
+                    {% trans %} Ajouter à mon panier {% endtrans %}
+                    {% if iconic is not defined %} <small>{% trans %} (choisissez un iconique) {% endtrans%}</small> {% endif %}
+                </a>
+            </button>
+        </div>
     </div>
   </div>
 {% endblock %}

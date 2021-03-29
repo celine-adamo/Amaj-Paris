@@ -37,7 +37,7 @@ ul {
 }
 
 .home {
-    margin-top: 120px;
+    margin-top: 130px;
 }
 
 .dressing {
@@ -52,10 +52,14 @@ ul {
 }
 
 .clothe-shadow {
-    -webkit-filter: drop-shadow(5px 5px 5px #8C8C8C);
-    filter: drop-shadow(5px 5px 5px #8C8C8C);
-    -moz-filter :  drop-shadow(5px 5px 5px #8C8C8C);
-    -ms-filter : drop-shadow(5px 5px 5px #8C8C8C);
+    position: relative;
+    -webkit-box-shadow: inset 0 0 10px 10px #000;
+    -moz-box-shadow: inset 0 0 10px 10px #000;
+    box-shadow: inset 0 0 10px 10px #000;
+/*    -webkit-filter: drop-shadow(5px 5px 5px #8C8C8C);*/
+/*    filter: drop-shadow(5px 5px 5px #8C8C8C);*/
+/*    -moz-filter :  drop-shadow(5px 5px 5px #8C8C8C);*/
+/*    -ms-filter : drop-shadow(5px 5px 5px #8C8C8C);*/
 }
 
 
@@ -125,7 +129,7 @@ ul {
     width: 500% !important;
     right: -195%;
     padding: 5px;
-    background-color: #fffaf0;
+    background-color: #ffffff;
     box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
@@ -135,7 +139,7 @@ ul {
     width: 200% !important;
     right: -70%;
     padding: 5px;
-    background-color: #fffaf0;
+    background-color: #ffffff;
     box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
@@ -150,6 +154,15 @@ ul {
 
 .iconics-title {
     font-weight: bold;
+}
+
+.imgBox {
+    width: 800px;
+    height: 800px;
+}
+
+.imgBox img {
+    object-fit: cover;
 }
 
 .img-clothes,

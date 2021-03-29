@@ -41,6 +41,10 @@ class DressingController extends AbstractController
         $product = $this->entity->getRepository(Products::class)->findOneBySlug($slug);
         $iconics = $this->entity->getRepository(Iconics::class)->findAll();
 
+        if (!$product) {
+            return $this->redirectToRoute('dressing');
+        }
+
         return $this->render('dressing/one.html.twig', [
             'product' => $product,
             'iconics' => $iconics,
@@ -48,15 +52,20 @@ class DressingController extends AbstractController
     }
 
     /**
-     * @Route("/dressing/{slug}/{id}", name="img-on-clothes")
+     * @Route("/dressing/{slug}/{slugIconic}", name="img-on-clothes")
      * @param $slug
-     * @param $id
+     * @param $slugIconic
      * @return Response
      */
-    public function iconicOnClothes($slug, $id): Response {
+    public function iconicOnClothes($slug, $slugIconic): Response {
         $product = $this->entity->getRepository(Products::class)->findOneBySlug($slug);
         $iconics = $this->entity->getRepository(Iconics::class)->findAll();
-        $iconic = $this->entity->getRepository(Iconics::class)->find($id);
+        $iconic = $this->entity->getRepository(Iconics::class)->findOneBySlug($slugIconic);
+
+        if (!$product || !$iconic) {
+            return $this->redirectToRoute('dressing');
+        }
+
         return $this->render('dressing/one.html.twig', [
             'product' => $product,
             'iconics' => $iconics,
