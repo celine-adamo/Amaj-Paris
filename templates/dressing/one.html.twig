@@ -35,18 +35,17 @@
             {% trans %} Les icôniques {% endtrans %}
        </h2>
         {% for iconic in iconics %}
-
-                <div class="col-6 col-md-2 my-4 img-iconic">
-                    <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "slug": product.slug, "id": iconic.id }) }}">
-                    <div class="card border-0">
-                        <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
-                             alt="Illustration de {{ iconic.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center ">{{ iconic.name }}</h5>
-                        </div>
+            <div class="col-6 col-md-2 my-4 img-iconic">
+                <a class="d-flex nav-link text-dark" href="{{ path('img-on-clothes', { "slug": product.slug, "id": iconic.id }) }}">
+                <div class="card border-0">
+                    <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
+                         alt="Illustration de {{ iconic.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center ">{{ iconic.name }}</h5>
                     </div>
-                    </a>
                 </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
   </div>

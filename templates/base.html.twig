@@ -58,80 +58,90 @@
                 </div>
             {% endif %}
             <nav class="bg-dark {% if block('navbar') is not defined %} fixed-top w-100 {% endif %} z-index-3">
-                <div class="d-flex justify-content-around align-items-center">
-                    <div class="menu-btn">
-                        <div class="menu-btn__burger"></div>
-                    </div>
-                    <div class="d-none d-sm-block">
-                        <a class="nav-link" href="{{path('dressing')}}">
-                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Dressing Unisexe {% endtrans %}</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="{{ path('home_page') }}">
-                            <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
-                        </a>
-                    </div>
-                    <div class="d-none d-sm-block">
-                        <a class="nav-link" href="#">
-                            <p class="text-white text-uppercase m-0 dressing">{% trans %} Je personnalise {% endtrans %}</p>
-                        </a>
-                    </div>
-                    <div>
-                        <ul class="d-flex justify-content-around align-items-center">
-                            <li class="list-unstyled p-2">
-{#                                <select id="languages" class="border-0 bg-dark text-white" aria-label=".form-select-sm example">#}
-{#                                    <option selected>FR</option>#}
-{#                                    <option value="1">EN</option>#}
-{#                                </select>#}
-                                <details class="details position-relative text-white">
-                                    <summary>Lang</summary>
-                                    <ul class="details-menu-lang position-absolute border border-0 rounded list-unstyled">
-                                        <li><a class="nav-link text-dark text-center" href="#">FR</a></li>
-                                        <li><a class="nav-link text-dark text-center" href="#">EN</a></li>
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="col-5 d-flex align-items-center justify-content-md-around">
+                                <div class="menu-btn">
+                                    <div class="menu-btn__burger"></div>
+                                </div>
+                                <div class="d-none d-sm-block">
+                                    <a class="nav-link" href="{{path('dressing')}}">
+                                        <p class="text-white text-nowrap text-uppercase m-0 dressing">{% trans %} Dressing Unisexe {% endtrans %}</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <div>
+                                    <a href="{{ path('home_page') }}">
+                                        <img height="110px" src="{{ asset('assets/images/logo/logo_amaj.png') }}" alt="Logo Amaj Paris">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center justify-content-around">
+                                <div class="d-none d-sm-block">
+                                    <a class="nav-link" href="#">
+                                        <p class="text-white text-nowrap text-uppercase m-0 dressing">{% trans %} Je personnalise {% endtrans %}</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <ul class="d-flex justify-content-around align-items-center">
+                                        <li class="list-unstyled p-2">
+                                            {#                                <select id="languages" class="border-0 bg-dark text-white" aria-label=".form-select-sm example">#}
+                                            {#                                    <option selected>FR</option>#}
+                                            {#                                    <option value="1">EN</option>#}
+                                            {#                                </select>#}
+                                            <details class="details position-relative text-white">
+                                                <summary>Lang</summary>
+                                                <ul class="details-menu-lang position-absolute border border-0 rounded list-unstyled">
+                                                    <li><a class="nav-link text-dark text-center" href="#">FR</a></li>
+                                                    <li><a class="nav-link text-dark text-center" href="#">EN</a></li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                        <li class="list-unstyled p-2">
+                                            <details class="details position-relative text-white">
+                                                <summary><i class="text-white fas fa-user"></i></summary>
+                                                <ul class="details-menu-account position-absolute border border-0 rounded list-unstyled">
+                                                    {% if app.user %}
+                                                        <li id="my_account" value="1">
+                                                            <a class="nav-link text-dark" href="{{ path('account') }}">Mon compte <small>({{ app.user.firstname }})</small></a>
+                                                        </li>
+                                                        <li id="logout" value="2">
+                                                            <a class="nav-link text-dark" href="{{ path('app_logout') }}">Se déconnecter</a>
+                                                        </li>
+                                                    {% else %}
+                                                        <li id="register" value="3">
+                                                            <a class="nav-link text-dark" href="{{ path('register') }}">S'inscrire</a>
+                                                        </li>
+                                                        <li id="login" value="4">
+                                                            <a class="nav-link text-dark" href="{{ path('app_login') }}">Se connecter</a>
+                                                        </li>
+                                                    {% endif %}
+                                                </ul>
+                                            </details>
+                                        </li>
+                                        <li class="list-unstyled p-2">
+                                            <a class="text-white" href="#">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-unstyled p-2">
+                                            <a class="text-white" href="#">
+                                                <i class="fa fa-shopping-basket"></i>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </details>
-                            </li>
-                            <li class="list-unstyled p-2">
-                                <details class="details position-relative text-white">
-                                    <summary><i class="text-white fas fa-user"></i></summary>
-                                    <ul class="details-menu-account position-absolute border border-0 rounded list-unstyled">
-                                        {% if app.user %}
-                                            <li id="my_account" value="1">
-                                                <a class="nav-link text-dark" href="{{ path('account') }}">Mon compte <small>({{ app.user.firstname }})</small></a>
-                                            </li>
-                                            <li id="logout" value="2">
-                                                <a class="nav-link text-dark" href="{{ path('app_logout') }}">Se déconnecter</a>
-                                            </li>
-                                        {% else %}
-                                            <li id="register" value="3">
-                                                <a class="nav-link text-dark" href="{{ path('register') }}">S'inscrire</a>
-                                            </li>
-                                            <li id="login" value="4">
-                                                <a class="nav-link text-dark" href="{{ path('app_login') }}">Se connecter</a>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
-                                </details>
-                            </li>
-                            <li class="list-unstyled p-2">
-                                <a class="text-white" href="#">
-                                    <i class="fa fa-envelope"></i>
-                                </a>
-                            </li>
-                            <li class="list-unstyled p-2">
-                                <a class="text-white" href="#">
-                                    <i class="fa fa-shopping-basket"></i>
-                                </a>
-                            </li>
-                        </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="sidebar d-flex flex-column justify-content-around align-items-center bg-dark">
                     <div class="sidebar-menu sidebar-menu__dressing">
                         <ul class="text-white text-center list-unstyled">
                             <li>
-                                <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Le dressing unisexe {% endtrans %}</a>
+                                <a class="nav-link text-white sidebar__dressing" href="{{ path('dressing') }}">{% trans %} Le dressing unisexe {% endtrans %}</a>
                             </li>
                             <li>
                                 <a class="nav-link text-white sidebar__dressing" href="#">{% trans %} Je personnalise {% endtrans %}</a>
@@ -192,7 +202,7 @@
                                    <div class="offset-0 offset-md-2">
                                        <ul class="navbar-nav lh-sm">
                                            <li class="nav-item">
-                                               <a class="nav-link text-white fs-5" href="#">{% trans %}Le dressing unisexe{% endtrans %}</a>
+                                               <a class="nav-link text-white fs-5" href="{{ path('dressing') }}">{% trans %}Le dressing unisexe{% endtrans %}</a>
                                            </li>
                                            <li class="nav-item">
                                                <a class="nav-link text-white" href="#">{% trans %}Vêtements{% endtrans %}</a>
