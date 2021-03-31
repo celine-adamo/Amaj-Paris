@@ -83,7 +83,7 @@ void main() {
   var renderer = new THREE.WebGLRenderer({ antialias: false });
 
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setClearColor(0xffffff, 0.0);
+  renderer.setClearColor(0xffffff, 1);
   renderer.setSize(parent.offsetWidth, parent.offsetHeight);
   parent.appendChild(renderer.domElement);
 
@@ -94,6 +94,7 @@ void main() {
 
   var loader = new THREE.TextureLoader();
   loader.crossOrigin = '';
+
   var texture1 = loader.load(image1, render);
   var texture2 = loader.load(image2, render);
   var disp = loader.load(dispImage, render);

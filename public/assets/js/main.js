@@ -28,7 +28,6 @@ menuBtn.addEventListener('click', () => {
 //     const links = Array.from(e.querySelectorAll('.sidebar-menu'));
 // });
 const sidebar_menu = Array.from(document.querySelectorAll('.sidebar .sidebar-menu ul li a'));
-console.log(sidebar_menu);
 
 sidebar_menu.forEach((e) => {
     e.addEventListener('click', () => {
