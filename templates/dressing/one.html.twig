@@ -11,25 +11,25 @@
             {{ product.name }}
         </h2>
         {# TODO: A voir avec Céline #}
-      <div class="text-center col-md-6 offset-md-3">
-        <div class="position-relative d-none d-md-block imgBox">
-            <img class="position-absolute w-100 top-0 start-0 mh-50 d-none"
+      <div class="text-center col-12">
+        <div class="position-relative top-50 start-50 translate-middle imgBox">
+            <img class="position-absolute w-100 top-0 start-0 d-none"
                  src="{{ asset('assets/images/products') }}/{{ product.img }}"
                  alt="Modèle {{ product.name }}"
             />
-            <img class="position-absolute clothe-shadow w-100 top-0 start-0 cloth-back d-none"
+            <img class="position-absolute w-100 top-0 start-0 cloth-back d-none"
                  src="{{ asset('assets/images/products') }}/{{ product.clothBack }}"
                  alt="Modèle {{ product.name }}"
             />
         </div>
-          <div class="d-flex d-md-none col-12">
-              <div class="col-6 imgBox">
-                  <img height="300px" src="{{ asset('assets/images/products') }}/{{ product.img }}" alt="Modèle {{ product.name }}">
-              </div>
-              <div class="col-6 imgBox">
-                  <img height="300px" src="{{ asset('assets/images/products') }}/{{ product.clothBack }}" alt="Modèle {{ product.name }}">
-              </div>
-          </div>
+{#          <div class="d-flex d-md-none col-12">#}
+{#              <div class="col-6 imgBox">#}
+{#                  <img height="300px" src="{{ asset('assets/images/products') }}/{{ product.img }}" alt="Modèle {{ product.name }}">#}
+{#              </div>#}
+{#              <div class="col-6 imgBox">#}
+{#                  <img height="300px" src="{{ asset('assets/images/products') }}/{{ product.clothBack }}" alt="Modèle {{ product.name }}">#}
+{#              </div>#}
+{#          </div>#}
       </div>
        <h2 id="iconics-title" class="text-center mt-3">
             {% trans %} Les icôniques {% endtrans %}
@@ -64,4 +64,15 @@
         </div>
     </div>
   </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="{{ asset('assets/js/hover.js') }}"></script>
+    <!-- Three.js -->
+    <!-- Custom -->
+    <script src="{{ asset('assets/js/hoverProducts.js')}}"></script>
+    <!-- Custom -->
 {% endblock %}
