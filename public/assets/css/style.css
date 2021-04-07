@@ -11,6 +11,7 @@ body {
     font-family: "D-Din", sans-serif;
     padding: 0;
     margin: 0 0 0 0;
+    min-height: 100vh;
 }
 
 body.open {
@@ -36,15 +37,16 @@ ul {
     margin-top: 165px;
 }
 
+.home {
+    margin-top: 130px;
+}
+
 .dressing {
     font-size: 26px;
 }
 
 .clothe-shadow {
-    -webkit-filter: drop-shadow(5px 5px 5px #8C8C8C);
-    filter: drop-shadow(5px 5px 5px #8C8C8C);
-    -moz-filter :  drop-shadow(5px 5px 5px #8C8C8C);
-    -ms-filter : drop-shadow(5px 5px 5px #8C8C8C);
+    position: relative;
 }
 
 
@@ -114,7 +116,7 @@ ul {
     width: 500% !important;
     right: -195%;
     padding: 5px;
-    background-color: #fffaf0;
+    background-color: #ffffff;
     box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
@@ -124,7 +126,7 @@ ul {
     width: 200% !important;
     right: -70%;
     padding: 5px;
-    background-color: #fffaf0;
+    background-color: #ffffff;
     box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.75);
@@ -139,6 +141,15 @@ ul {
 
 .iconics-title {
     font-weight: bold;
+}
+
+.imgBox {
+    height: 530px;
+    width: 530px;
+}
+
+.imgBox img {
+    object-fit: cover;
 }
 
 .img-clothes,
@@ -246,6 +257,10 @@ ul {
     }
     .sidebar-menu__dressing {
         display: block;
+    }
+    .imgBox {
+        height: 300px;
+        width: 300px;
     }
     .img-clothes:hover,
     .img-iconic:hover {

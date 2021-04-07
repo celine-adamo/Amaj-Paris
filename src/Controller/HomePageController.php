@@ -21,7 +21,7 @@ class HomePageController extends AbstractController
      */
     public function index(): Response
     {
-        $iconics = $this->entityManager->getRepository(Iconics::class)->findAll();
+        $iconics = $this->entityManager->getRepository(Iconics::class)->findAllIconics();
 
         return $this->render('home_page/index.html.twig', [
             'iconics' => $iconics,
