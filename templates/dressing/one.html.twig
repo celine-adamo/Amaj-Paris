@@ -43,7 +43,8 @@
         {% for iconic in iconics %}
             <div class="col-6 col-md-2 my-4 img-iconic">
                 <a class="d-flex nav-link text-dark"
-                   href="{{ path('product-iconic',{ "slug": product.slug, "slugIconic": iconic.slug, "productIconic": clothes.slug }) }}">
+                   href="{{ path('product-iconic',
+                       { "slug": product.slug, "slugIconic": iconic.slug }) }}">
                 <div class="card border-0">
                     <img class="card-img-top " src="{{ asset('assets/images/iconics') }}/{{ iconic.pics }}"
                          alt="Illustration de {{ iconic.name }}">
