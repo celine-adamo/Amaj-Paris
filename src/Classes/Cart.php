@@ -29,6 +29,10 @@ class Cart {
             foreach($this->get() as $id=>$quantity){
                 $product_object=$this->entity->getRepository(Products::class)->findOneById($id);
                 $iconic_object = $this->entity->getRepository(Iconics::class)->findOneById($id);
+                if (!$product_object && !$iconic_object) {
+                    $this->delete($id);
+                    continue;
+                }
                 $cartComplete[]=[
                     'product'=>$product_object,
                     'iconics' => $iconic_object,

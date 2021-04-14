@@ -7,7 +7,10 @@
         <div class="row">
             {% set bigTotal = null %}
             <h1>Mon Panier</h1>
-            <p>Retrouvez l'ensemble des produits que vous avez ajoutés à votre panier.</p>
+            <div class="d-flex justify-content-between">
+                <p>Retrouvez l'ensemble des produits que vous avez ajoutés à votre panier.</p>
+                <a class="btn btn-secondary float-right" href="{{ path('dressing') }}">Ajouter de nouveaux produits</a>
+            </div>
             {% if cart|length > 0 %}
                 <table class="table mt-4">
                     <thead>
@@ -35,7 +38,13 @@
                                 <img width="50px" height="50px" src="assets/images/iconics/{{ products.iconics.pics }}" alt="">
                             </th>
                             <td>
+                                <a href="{{ path('take_of_to_cart', {'id': products.product.id}) }}">
+                                    <img class="ml-3" height="18px" src="{{ asset('assets/images/icons/minus.png') }}" alt="took of products">
+                                </a>
                                 x {{ quantity }}
+                                <a href="{{ path('add_to_cart', {'id': products.product.id}) }}">
+                                    <img height="18px" src="{{ asset('assets/images/icons/plus.png') }}" alt="add products">
+                                </a>
                             </td>
                             <td>
                                 <select name="select">
@@ -61,7 +70,6 @@
                     <a href="#" class="btn btn-success mt-3">Valider mon panier</a>
                     <a href="{{ path('delete_all_cart') }}" class="btn btn-danger mt-3">Vider mon panier</a>
                 </div>
-                <h3>Oops</h3>
             {% else %}
                 <h4 class="text-center">Vous n'avez pas encore ajouter d'article dans votre panier</h4>
             {% endif %}
