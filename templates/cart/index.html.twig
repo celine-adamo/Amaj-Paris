@@ -3,9 +3,68 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-<pre>
-    {{ dump(cart) }}
-</pre>
-
-
+    <div class="container contner">
+        <div class="row">
+            {% set bigTotal = null %}
+            <h1>Mon Panier</h1>
+            <p>Retrouvez l'ensemble des produits que vous avez ajoutés à votre panier.</p>
+            {% if cart|length > 0 %}
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produits</th>
+                            <th scope="col">Icônique</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Taille</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for products in cart %}
+                        {% set quantity = products.quantity %}
+                        {% set price = (50000.00/100)|number_format(2, ',', '.') %}
+                        {% set total = ((50000.00 * products.quantity)/100)|number_format(2, ',', '.') %}
+                        <tr>
+                            <th class="d-flex flex-column">
+                                <img width="50px" height="50px" src="assets/images/products/{{ products.product.img }}" alt="">
+                                <small>{{ products.product.name }}</small>
+                            </th>
+                            <th>
+                                <img width="50px" height="50px" src="assets/images/iconics/{{ products.iconics.pics }}" alt="">
+                            </th>
+                            <td>
+                                x {{ quantity }}
+                            </td>
+                            <td>
+                                <select name="select">
+                                    {% for size in products.product.size %}
+                                        <option value="{{ size }}">{{ size }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                {{ price }} €
+                            </td>
+                            <td>
+                                {{ total }} €
+                            </td>
+                        </tr>
+                        {% set bigTotal = bigTotal + (50000.00 * products.quantity) %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-right mb-5">
+                    <b>Nombre de produit :</b> {{ cart|length }} <br>
+                    <b>Total :</b> {{ (bigTotal / 100)|number_format(2, ',', '.') }} <br>
+                    <a href="#" class="btn btn-success mt-3">Valider mon panier</a>
+                    <a href="{{ path('delete_all_cart') }}" class="btn btn-danger mt-3">Vider mon panier</a>
+                </div>
+                <h3>Oops</h3>
+            {% else %}
+                <h4 class="text-center">Vous n'avez pas encore ajouter d'article dans votre panier</h4>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

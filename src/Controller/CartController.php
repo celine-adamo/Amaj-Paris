@@ -27,4 +27,13 @@ class CartController extends AbstractController
         $cart->add($id);
         return $this->redirectToRoute('cart');
     }
+
+    /**
+     * @Route("/cart/delete", name="delete_all_cart")
+     */
+    public function delete(Cart $cart): Response
+    {
+        $cart->deleteAll();
+        return $this->redirectToRoute('cart');
+    }
 }
