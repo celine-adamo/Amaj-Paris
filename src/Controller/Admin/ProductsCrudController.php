@@ -6,7 +6,9 @@ use App\Entity\Products;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ProductsCrudController extends AbstractCrudController
@@ -21,6 +23,8 @@ class ProductsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
+            TextareaField::new('description'),
+            MoneyField::new('price')->setCurrency('EUR'),
             ImageField::new('img')
                 ->setBasePath('assets/images/products/')
                 ->setUploadDir('public/assets/images/products/')

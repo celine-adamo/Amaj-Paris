@@ -57,7 +57,7 @@
         {% endfor %}
         <div class="mb-5">
             <button class="btn btn-dark {% if iconic is not defined %} disabled {% endif %}">
-                <a class="text-white nav-link" {% if clothes is defined %} href="{{path('add_to_cart',{id:clothes.id})}}" {% endif %}>
+                <a class="text-white nav-link" {% if clothes is defined %} href="{{path('add_to_cart',{ id: product.id, idIconic: iconic.id })}}" {% endif %}>
                     {% trans %} Ajouter à mon panier {% endtrans %}
                     {% if iconic is not defined %} <small>{% trans %} (choisissez un iconique) {% endtrans%}</small> {% endif %}
                 </a>

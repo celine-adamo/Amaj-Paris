@@ -25,30 +25,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for products in cart %}
-                        {% set quantity = products.quantity %}
-                        {% set price = (50000.00/100)|number_format(2, ',', '.') %}
-                        {% set total = ((50000.00 * products.quantity)/100)|number_format(2, ',', '.') %}
+                    {% for product in cart %}
+                        {% set quantity = product.quantity %}
+                        {% set price = (product.produit.price / 100)|number_format(2, ',', '.') %}
+                        {% set total = ((product.produit.price * quantity)/100)|number_format(2, ',', '.') %}
                         <tr>
                             <th class="d-flex flex-column">
-                                <img width="50px" height="50px" src="assets/images/products/{{ products.product.img }}" alt="">
-                                <small>{{ products.product.name }}</small>
+                                <img width="50px" height="50px" src="assets/images/products/{{ product.produit.img }}" alt="{{ product.produit.name }}">
+                                <small>{{ product.produit.name }}</small>
                             </th>
                             <th>
-                                <img width="50px" height="50px" src="assets/images/iconics/{{ products.iconics.pics }}" alt="">
+                                <img width="50px" height="50px" src="assets/images/iconics/{{ product.iconic.pics }}" alt="{{ product.iconic.name }}">
                             </th>
                             <td>
-                                <a href="{{ path('take_of_to_cart', {'id': products.product.id}) }}">
-                                    <img class="ml-3" height="18px" src="{{ asset('assets/images/icons/minus.png') }}" alt="took of products">
-                                </a>
                                 x {{ quantity }}
-                                <a href="{{ path('add_to_cart', {'id': products.product.id}) }}">
-                                    <img height="18px" src="{{ asset('assets/images/icons/plus.png') }}" alt="add products">
-                                </a>
                             </td>
                             <td>
                                 <select name="select">
-                                    {% for size in products.product.size %}
+                                    {% for size in product.produit.size %}
                                         <option value="{{ size }}">{{ size }}</option>
                                     {% endfor %}
                                 </select>
@@ -60,7 +54,7 @@
                                 {{ total }} €
                             </td>
                         </tr>
-                        {% set bigTotal = bigTotal + (50000.00 * products.quantity) %}
+                        {% set bigTotal = bigTotal + (product.produit.price * product.quantity) %}
                     {% endfor %}
                     </tbody>
                 </table>
@@ -71,7 +65,7 @@
                     <a href="{{ path('delete_all_cart') }}" class="btn btn-danger mt-3">Vider mon panier</a>
                 </div>
             {% else %}
-                <h4 class="text-center">Vous n'avez pas encore ajouter d'article dans votre panier</h4>
+                <h4 class="text-center my-5">Vous n'avez pas encore ajouter d'article dans votre panier</h4>
             {% endif %}
         </div>
     </div>

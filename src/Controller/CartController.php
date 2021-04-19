@@ -20,11 +20,12 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart/add/{id}", name="add_to_cart")
+     * @Route("/cart/add/{id}/{idIconic}", name="add_to_cart")
      */
-    public function add(Cart $cart, $id): Response
+    public function add(Cart $cart, $id, $idIconic): Response
     {
-        $cart->add($id);
+        $product = [$id, $idIconic];
+        $cart->add($product);
         return $this->redirectToRoute('cart');
     }
 

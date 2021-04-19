@@ -24,38 +24,44 @@ class Cart {
 
     public function getFull(): array
     {
+        $products = $this->get();
         $cartComplete = [];
-        if ($this->get()){
-            foreach($this->get() as $id=>$quantity){
-                $product_object=$this->entity->getRepository(Products::class)->findOneById($id);
-                $iconic_object = $this->entity->getRepository(Iconics::class)->findOneById($id);
-                if (!$product_object && !$iconic_object) {
-                    $this->delete($id);
-                    continue;
+        $quantity = 0;
+
+        if ($products) {
+            $quantity++;
+            $productsLength = count($products);
+            for ($i = 0; $i <= $productsLength - 1; $i++) {
+                if ($products[$i]) {
+                    $product_object = $this->entity->getRepository(Products::class)->findOneById($products[$i][0]);
+                    $iconic_object = $this->entity->getRepository(Iconics::class)->findOneById($products[$i][1]);
+                    $cartComplete[] = [
+                        'produit' => $product_object,
+                        'iconic' => $iconic_object,
+                        'quantity' => $quantity
+                    ];
                 }
-                $cartComplete[]=[
-                    'product'=>$product_object,
-                    'iconics' => $iconic_object,
-                    'quantity'=>$quantity,
-                ];
             }
         }
-
         return $cartComplete;
-
     }
 
-    public function add($id): void
+    public function add($product): void
     {
         $cart = $this->session->get('cart',[]);
-        if (!empty($cart[$id])){
-            $cart[$id]++ ;
-
+        $ArrayProduct = ['produit' => $product[0], 'icônique' => $product[1]];
+        if (!empty($ArrayProduct['produit']) && !empty($ArrayProduct['icônique'])) {
+            $cart[] = [
+                $ArrayProduct['produit']++,
+                $ArrayProduct['icônique']++
+            ];
         } else {
-            $cart[$id]=1;
+            $cart[] = [
+                $ArrayProduct['produit'] = 1,
+                $ArrayProduct['icônique'] = 1
+            ];
         }
         $this->session->set('cart', $cart);
-       
     }
 
     public function delete($id)
